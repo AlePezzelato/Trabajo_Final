@@ -6,5 +6,5 @@ from . import models
 
 def index(request):
     consulta = models.Alumno.objects.all()
-    contexto = {"Alumno": consulta}
+    contexto = {"alumnos": consulta}
     return render (request, "alumno/index.html", contexto)

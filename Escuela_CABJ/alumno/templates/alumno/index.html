@@ -5,14 +5,14 @@
 {% endblock titulo %}
 
 {% block contenido %}
-    {% for i in Alumno %}
-    <h1>{{Alumno.nombre}} {{Alumno.apellido}}</h1>
+    {% for alumno in alumnos %}
+    <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
     <p>
         <ul>
-            <li>{{Alumno.fecha_de_nacimiento}}</li>
-            <li>{{Alumno.año_curso}}</li>
-            <li>{{Alumno.materia_id}}</li>
-            <li>{{Alumno.docente_id}}</li>
+            <li>{{alumno.fecha_de_nacimiento}}</li>
+            <li>{{alumno.año_curso}}</li>
+            <li>{{alumno.materia_id}}</li>
+            <li>{{alumno.docente_id}}</li>
     </ul></p>
         
     {% endfor %}
