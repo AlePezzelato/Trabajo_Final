@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Alumnos
+{% endblock titulo %}
+
+{% block contenido %}
+    {% for i in Alumno %}
+    <h1>{{Alumno.nombre}} {{Alumno.apellido}}</h1>
+    <p>
+        <ul>
+            <li>{{Alumno.fecha_de_nacimiento}}</li>
+            <li>{{Alumno.año_curso}}</li>
+            <li>{{Alumno.materia_id}}</li>
+            <li>{{Alumno.docente_id}}</li>
+    </ul></p>
+        
+    {% endfor %}
+{% endblock contenido %}
