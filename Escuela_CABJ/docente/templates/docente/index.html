@@ -1,9 +1,9 @@
 {% extends 'core/base.html' %}
 
-{% lock titulo %}
+{% block titulo %}
     Docentes
 {% endblock titulo %}
 
 {% block contenido %}
-    
+<button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
 {% endblock contenido %}
