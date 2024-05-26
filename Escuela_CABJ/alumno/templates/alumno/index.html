@@ -4,6 +4,10 @@
     Alumnos
 {% endblock titulo %}
 
+{% block titulo_aplicacion %}
+    Escuela La mitad +1
+{% endblock titulo_aplicacion %}
+
 {% block contenido %}
     {% for alumno in alumnos %}
     <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
