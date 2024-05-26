@@ -1,9 +1,10 @@
 from django.urls import path
 
-from . import views
+from docente.views import listado_docentes, index
 
 app_name = "docente"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", index, name="index"),
+    path("listado_docentes", listado_docentes, name="listado_docentes")
 ]

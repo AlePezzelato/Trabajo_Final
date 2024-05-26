@@ -9,5 +9,6 @@ Escuela La mitad +1
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
+<button><a href="{% url 'docente:listado_docentes' %}">Ir al listado de docentes</a></button>
 <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
 {% endblock contenido %}

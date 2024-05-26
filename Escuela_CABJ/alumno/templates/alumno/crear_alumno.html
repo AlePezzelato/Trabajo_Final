@@ -1,0 +1,15 @@
+{% block titulo %}
+    Carga de Alumnos
+{% endblock titulo %}
+
+{% block titulo_aplicacion %}
+    Carga de alumnos
+{% endblock titulo_aplicacion %}
+
+{% block contenido %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock contenido %}

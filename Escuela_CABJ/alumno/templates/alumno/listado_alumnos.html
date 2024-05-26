@@ -1,0 +1,22 @@
+{% block titulo %}
+    Alumnos
+{% endblock titulo %}
+
+{% block titulo_aplicacion %}
+    Escuela La mitad +1
+{% endblock titulo_aplicacion %}
+
+{% block contenido %}
+    {% for alumno in alumnos %}
+    <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
+    <p>
+        <ul>
+            <li>{{alumno.fecha_de_nacimiento}}</li>
+            <li>{{alumno.año_curso}}</li>
+            <li>{{alumno.materia_id}}</li>
+            <li>{{alumno.docente_id}}</li>
+    </ul></p>
+        
+    <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
+    {% endfor %}
+{% endblock contenido %}

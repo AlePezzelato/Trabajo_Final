@@ -9,16 +9,6 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    {% for alumno in alumnos %}
-    <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
-    <p>
-        <ul>
-            <li>{{alumno.fecha_de_nacimiento}}</li>
-            <li>{{alumno.año_curso}}</li>
-            <li>{{alumno.materia_id}}</li>
-            <li>{{alumno.docente_id}}</li>
-    </ul></p>
-        
-    <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
-    {% endfor %}
+<button><a href="{% url 'alumno:listado_alumnos' %}">Ir al listado de alumnos</a></button>
+<button><a href="{% url 'alumno:crear_alumno' %}">Agregar alumnos</a></button>
 {% endblock contenido %}
