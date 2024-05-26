@@ -1,5 +1,6 @@
 from django.db import models
 from alumno.models import Año
+from materia.models import Materia
 
 
 
@@ -16,8 +17,9 @@ class Docente(models.Model):
 
 
 class Curso(models.Model):
-    docente = models.ForeignKey(Docente, on_delete=models.CASCADE)
-    año = models.ForeignKey(Año, on_delete=models.CASCADE)
+    docente = models.ForeignKey(Docente, on_delete=models.SET_NULL, null=True, blank=True)
+    materia = models.ForeignKey(Materia, on_delete=models.SET_NULL, null=True, blank=True)
+    año = models.ForeignKey(Año, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f"{self.docente} en {self.año}"
