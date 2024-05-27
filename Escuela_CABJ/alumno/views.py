@@ -23,5 +23,5 @@ def crear_alumno(request):
             return redirect("alumno:listado_alumnos")
     else:
         form = AlumnoForm()
-        return render(request, "alumno/crear_alumno.html", {"form": form})
+    return render(request, "alumno/crear_alumno.html", {"form": form})
     
