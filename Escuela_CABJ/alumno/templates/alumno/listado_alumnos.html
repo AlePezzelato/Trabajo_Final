@@ -1,3 +1,4 @@
+{% extends 'core/base.html' %}
 {% block titulo %}
     Alumnos
 {% endblock titulo %}
@@ -7,16 +8,17 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
+    <ul>
     {% for alumno in alumnos %}
     <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
-    <p>
-        <ul>
+    
             <li>{{alumno.fecha_de_nacimiento}}</li>
             <li>{{alumno.año_curso}}</li>
             <li>{{alumno.materia_id}}</li>
             <li>{{alumno.docente_id}}</li>
-    </ul></p>
-        
-    <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
+                
+    <button ><a href="{% url 'alumno:actualizar_alumno' alumno.id %}">Actualizar datos</a></button>
+    <button ><a href="{% url 'alumno:borrar_alumno' alumno.id %}">Borrar alumno</a></button>
     {% endfor %}
+</ul>
 {% endblock contenido %}
