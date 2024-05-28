@@ -6,18 +6,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'alumno:index' %}">Alumnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'alumno:index' %}">Alumnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'docente:index' %}">Docentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'materia:index' %}">Materia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-info" href="#">{{user.username}}</a></li>
                     <li class="nav-item">
-                        <form action="{% url 'core:logout' %}" method = "post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-dark">Logout</button>
-                        </form>
+                    <form action="{% url 'core:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-dark">Logout</button>
+                    </form>
+                    </li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:registro' %}">Registrar usuario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:registro' %}">Registrar usuario</a></li>
                 {% endif %}
                 
             </ul>
