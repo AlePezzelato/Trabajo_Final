@@ -8,17 +8,46 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    <ul>
-    {% for alumno in alumnos %}
-    <h1>{{alumno.nombre}} {{alumno.apellido}}</h1>
-    
-            <li>{{alumno.fecha_de_nacimiento}}</li>
-            <li>{{alumno.año_curso}}</li>
-            <li>{{alumno.materia_id}}</li>
-            <li>{{alumno.docente_id}}</li>
-                
-    <button ><a href="{% url 'alumno:actualizar_alumno' alumno.id %}">Actualizar datos</a></button>
-    <button ><a href="{% url 'alumno:borrar_alumno' alumno.id %}">Borrar alumno</a></button>
-    {% endfor %}
-</ul>
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="{% url 'alumno:listado_alumnos' %}"
+                  method="get"
+                  class="input-group">
+                <input type="text"
+                       name="busqueda"
+                       class="form-control"
+                       placeholder="Buscar...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alumno in alumnos%}
+                    <tr>
+                        <td>{{ alumno.nombre }} {{alumno.apellido}}</td>
+                        <td>
+                            <a href="{% url 'alumno:detalle_alumno' alumno.id%}"
+                               class="btn btn-info btn-sm">Detalle</a>
+                            <a href="{% url 'alumno:actualizar_alumno' alumno.id %}"
+                               class="btn btn-warning btn-sm">Cambiar</a>
+                            <a href="{% url 'alumno:borrar_alumno' alumno.id %}"
+                               class="btn btn-danger btn-sm">Borrar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock contenido %}

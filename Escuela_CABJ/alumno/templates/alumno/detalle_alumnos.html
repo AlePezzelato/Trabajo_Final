@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Producto | Categorías de Productos
+{% endblock title %}
+
+{% block body_title %}
+    Producto - Categorías de Productos: Vista en Detalle
+{% endblock body_title %}
+
+{% block content %}
+    <ul>
+        <li>Nombre: {{ alumno.nombre }} </li>
+        <li>Apellido: {{ alumno.apellido }}</li>
+        <li>Fecha de nacimiento: {{alumno.fecha_de_nacimiento}}</li>
+        <li>Año que cursa: {{alumno.año_curso}}</li>
+        <li>Materia: {{alumno.materia_id}}</li>
+        <li>Docente: {{alumno.docente_id}}</li>
+
+    </ul>
+    <div>
+        <a href="{% url 'alumno:listado_alumno' %}">Volver</a>
+    </div>
+{% endblock content %}
