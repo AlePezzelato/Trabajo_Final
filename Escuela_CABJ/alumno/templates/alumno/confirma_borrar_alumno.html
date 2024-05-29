@@ -9,7 +9,7 @@
 
 {% block contenido %}
 
-<p class="fs-4 fst-italic">Seguro que desea eliminar los datos de {{object.nombre}}?</p>
+<p class="fs-4 fst-italic">Seguro que desea eliminar los datos de {{alumno.nombre}}?</p>
     <form  method="post">
         {% csrf_token %}
         <button type="submit">Confirmar</button>

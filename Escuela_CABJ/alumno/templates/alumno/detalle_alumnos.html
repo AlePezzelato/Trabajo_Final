@@ -1,14 +1,14 @@
 {% extends 'core/base.html' %}
 
-{% block title %}
+{% block titulo %}
     Producto | Categorías de Productos
-{% endblock title %}
+{% endblock titulo %}
 
-{% block body_title %}
+{% block titulo_aplicacion%}
     Producto - Categorías de Productos: Vista en Detalle
-{% endblock body_title %}
+{% endblock titulo_aplicacion%}
 
-{% block content %}
+{% block contenido%}
     <ul>
         <li>Nombre: {{ alumno.nombre }} </li>
         <li>Apellido: {{ alumno.apellido }}</li>
@@ -19,6 +19,6 @@
 
     </ul>
     <div>
-        <a href="{% url 'alumno:listado_alumno' %}">Volver</a>
+        <a href="{% url 'alumno:listado_alumnos' %}">Volver</a>
     </div>
-{% endblock content %}
+{% endblock contenido %}

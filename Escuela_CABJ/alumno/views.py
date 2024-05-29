@@ -46,7 +46,7 @@ def actualizar_alumno(request, pk:int):
         form = AlumnoForm(instance=consulta)
     return render(request, "alumno/crear_alumno.html", {"form": form})
 
-def detalle_alumno(request, pk: int):
+def detalle_alumno(request, pk:int):
     consulta = Alumno.objects.get(id=pk)
     contexto = {"alumno": consulta}
     return render(request, "alumno/detalle_alumnos.html", contexto)
@@ -58,4 +58,4 @@ def borrar_alumno(request, pk:int):
         consulta.delete()
         return redirect("alumno:listado_alumnos")
     else:
-        return render(request, "alumno/confirma_borrar_alumno.html", {"objeto":consulta})
+        return render(request, "alumno/confirma_borrar_alumno.html", {"alumno":consulta})
