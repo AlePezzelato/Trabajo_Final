@@ -10,7 +10,6 @@
         <meta name="keywords" content="palabra clave 1, palabra clave 2, palabra clave 3">
         <title>
             {% block titulo %}
-                
             {% endblock titulo %}
         </title>
         <!-- Favicon-->
@@ -21,13 +20,12 @@
     <body>
         {% include 'core/componentes/navbar.html' %}
             
-            <h1>
+            <h1 class="text-primary text-center">
                 {% block titulo_aplicacion %}
                 {% endblock titulo_aplicacion %}
             </h1>
         
         {% block contenido %}
-            
         {% endblock contenido %}
 
         {% include 'core/componentes/footer.html' %}

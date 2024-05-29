@@ -1,21 +1,25 @@
+{% extends 'core/base.html' %}
+
 {% block titulo %}
     Alumnos
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
-    Escuela La mitad +1
+    Escuela La mitad +1 - Listado de docentes
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
     {% for docente in docentes %}
-    <h1>{{docente.nombre}} {{docente.apellido}}</h1>
-    <p>
-        <ul>
-            <li>{{docente.materia_id}}</li>
-            
-        </ul>
-    </p>
-        
-    <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
+
+    <div class="container mt-5">
+        <h1 class="display-8">{{ docente.nombre }} {{ docente.apellido }}</h1>
+        <p>
+            <ul class="list-group">
+                <li class="list-group-item">{{ docente.materia_id }}</li>
+            </ul>
+        </p>
+    </div>
     {% endfor %}
+    <a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Ir a principal</a>
+    
 {% endblock contenido %}
