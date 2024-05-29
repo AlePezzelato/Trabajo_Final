@@ -1,5 +1,5 @@
 <!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="#!">Escuela Club Atletico Boca Juniors</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -10,11 +10,11 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'docente:index' %}">Docentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'materia:index' %}">Materia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link text-bg-info" href="#">{{user.username}}</a></li>
+                    <li class="nav-item"><a class="nav-link text-bg-primary" href="#">{{user.username}}</a></li>
                     <li class="nav-item">
                     <form action="{% url 'core:logout' %}" method="post">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-dark">Logout</button>
+                        <button type="submit" class="btn btn-primary">Logout</button>
                     </form>
                     </li>
                 {% else %}

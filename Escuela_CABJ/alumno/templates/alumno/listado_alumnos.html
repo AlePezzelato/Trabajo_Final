@@ -38,16 +38,17 @@
                         <td>{{ alumno.nombre }} {{alumno.apellido}}</td>
                         <td>
                             <a href="{% url 'alumno:detalle_alumno' alumno.id%}"
-                               class="btn btn-info btn-sm">Detalle</a>
+                               class="btn btn-primary btn-sm">Detalle</a>
                             <a href="{% url 'alumno:actualizar_alumno' alumno.id %}"
-                               class="btn btn-warning btn-sm">Cambiar</a>
+                               class="btn btn-warning btn-sm">Editar</a>
                             <a href="{% url 'alumno:borrar_alumno' alumno.id %}"
-                               class="btn btn-danger btn-sm">Borrar</a>
+                               class="btn btn-primary btn-sm">Borrar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <button class=""><a href="{% url 'alumno:index' %}">Volver</a></button>
     </div>
 </div>
 {% endblock contenido %}
