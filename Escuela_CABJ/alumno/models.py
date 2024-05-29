@@ -8,7 +8,7 @@ class Alumno(models.Model):
     nombre = models.CharField(max_length=250)
     apellido = models.CharField(max_length=150)
     fecha_de_nacimiento = models.DateField(null=True, blank=True)
-    año_curso= models.PositiveBigIntegerField(unique=True)
+    año_curso= models.PositiveBigIntegerField(null=True)
     docente_id = models.ForeignKey("docente.Docente", on_delete=models.SET_NULL, null=True)
     materia_id = models.ForeignKey("materia.Materia", on_delete=models.SET_NULL, null=True)
     año = models.ManyToManyField("Año", through="Inscripcion")
