@@ -14,7 +14,7 @@ def listado_docentes(request):
         consulta = Docente.objects.filter(nombre__icontains=busqueda)
     else:
         consulta = Docente.objects.all()
-        contexto = {"docente": consulta}
+        contexto = {"docentes": consulta}
     return render(request, "docente/listado_docentes.html", contexto)
 
 def crear_docente(request):
@@ -29,8 +29,8 @@ def crear_docente(request):
 
 def detalle_docentes(request, pk: int):
     consulta = Docente.objects.get(id=pk)
-    contexto = {"docente": consulta}
-    return render (request, "docente/detalle_docentes.html", contexto)
+    contexto = {"docentes": consulta}
+    return render (request, "docente/detalle_docente.html", contexto)
 
 def actualizar_docente(request, pk: int):
     consulta = Docente.objects.get(id=pk)
@@ -48,4 +48,4 @@ def borrar_docente(request, pk: int):
     if request.method == "POST":
         consulta.delete()
         return redirect("docente:listado_docentes")
-    return render(request, "docente/confirma_borrar.html", {"object": consulta})
+    return render(request, "docente/confirma_borrar.html", {"docentes": consulta})

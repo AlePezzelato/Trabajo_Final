@@ -7,9 +7,9 @@ urlpatterns = [
     path("", index, name="index"),
     path("listado_docentes", listado_docentes, name="listado_docentes"),
     path("crear_docente", crear_docente, name="crear_docente"),
-    path("detalle_docente<int:pk>", detalle_docentes, name="detalle_docente"),
-    path("actualizar_docente<int:pk>", actualizar_docente, name="actualizar_docente"),
-    path("borrar_docente<int:pk>", borrar_docente, name="borrar_docente"),
+    path("detalle_docentes/<int:pk>", detalle_docentes, name="detalle_docentes"),
+    path("actualizar_docente/<int:pk>", actualizar_docente, name="actualizar_docente"),
+    path("borrar_docente/<int:pk>", borrar_docente, name="borrar_docente"),
 ]
     
 

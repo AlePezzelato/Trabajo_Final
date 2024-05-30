@@ -11,6 +11,7 @@ Escuela La mitad +1 - Docentes
 {% block contenido %}
 <div class="text-center">
 <button><a href="{% url 'docente:listado_docentes' %}">Ir al listado de docentes</a></button>
+<button><a href="{% url 'docente:crear_docente' %}">Crear docentes</a></button>
 <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
 </div>
 {% endblock contenido %}

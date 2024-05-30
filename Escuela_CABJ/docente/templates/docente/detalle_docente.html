@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 
-{% block tiulo %}
+{% block titulo %}
     Producto | Productos
 {% endblock titulo %}
 
@@ -10,11 +10,11 @@
 
 {% block contenido %}
     <ul>
-        <li>Nombre: {{ docente.nombre }} </li>
-        <li>Apellido: {{ docente.apellido }}</li>
-        <li>Materia : {{docente.materia_id}}</li>
-        <li>Año: {{docente.año}}</li>
+        <li>Nombre: {{ docentes.nombre }} </li>
+        <li>Apellido: {{ docentes.apellido }}</li>
+        <li>Materia : {{docentes.materia_id}}</li>
+        <li>Año: {{docentes.año}}</li>
     <div>
-        <a href="{% url 'producto:producto_list' %}">Volver</a>
+        <a href="{% url 'docente:listado_docentes' %}">Volver</a>
     </div>
 {% endblock contenido %}

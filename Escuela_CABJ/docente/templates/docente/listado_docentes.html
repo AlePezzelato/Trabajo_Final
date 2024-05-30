@@ -34,11 +34,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for i in docente %}
+                {% for docente in docentes %}
                     <tr>
                         <td>{{ docente.nombre }} {{docente.apellido}}</td>
                         <td>
-                            <a href="{% url 'docente:detalle_docente' docente.id%}"
+                            <a href="{% url 'docente:detalle_docentes' docente.id%}"
                                class="btn btn-primary btn-sm">Detalle</a>
                             <a href="{% url 'docente:actualizar_docente' docente.id %}"
                                class="btn btn-warning btn-sm">Editar</a>
