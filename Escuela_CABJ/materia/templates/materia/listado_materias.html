@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Materias
+{% endblock titulo %}
+
+{% block titulo_aplicacion %}
+    Escuela La mitad +1 - Listado de materias
+{% endblock titulo_aplicacion %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="{% url 'materia:listado_materias' %}"
+                  method="get"
+                  class="input-group">
+                <input type="text"
+                       name="busqueda"
+                       class="form-control"
+                       placeholder="Buscar...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for materia in materias%}
+                    <tr>
+                        <td>{{ materia.nombre }} </td>
+                        <td>
+                            <a href="{% url 'materia:detalle_materia' materia.id%}"
+                               class="btn btn-primary btn-sm">Detalle</a>
+                            <a href="{% url 'materia:actualizar_materia' materia.id %}"
+                               class="btn btn-warning btn-sm">Editar</a>
+                            <a href="{% url 'materia:borrar_materia' materia.id %}"
+                               class="btn btn-primary btn-sm">Borrar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class=""><a href="{% url 'alumno:index' %}">Volver</a></button>
+    </div>
+</div>
+
+    
+{% endblock contenido %}
+
+
+
+<!-- {% for materia in materias %}
+    <div class="container mt-5">
+        <h1 class="display-8">{{ materia.nombre }}</h1>
+        <p>
+            <ul class="list-group">
+                <li class="list-group-item">{{ materia.año }}</li>
+                <li class="list-group-item">{{ materia.docente }}</li>
+            </ul>
+        </p>
+    </div>
+    {% endfor %}
+    <a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Ir a principal</a>     -->

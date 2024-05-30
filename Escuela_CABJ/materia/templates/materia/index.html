@@ -10,5 +10,7 @@ Escuela La mitad +1
 
 
 {% block contenido %}
+<button ><a href="{% url 'materia:crear_materia' %}">Crear Materia</a></button>
+<button ><a href="{% url 'materia:listado_materias' %}">Listado de materias</a></button>
 <button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
 {% endblock contenido %}

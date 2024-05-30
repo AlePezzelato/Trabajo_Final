@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Producto | Categorías de Productos
+{% endblock titulo %}
+
+{% block titulo_aplicacion%}
+    Producto - Categorías de Productos: Vista en Detalle
+{% endblock titulo_aplicacion%}
+
+{% block contenido%}
+    <ul>
+        <li>Nombre: {{ materia.nombre }} </li>
+        <li>Año que cursa: {{materia.año_materia}}</li>
+        <li>Docente: {{materia.docente_id}}</li>
+
+    </ul>
+    <div>
+        <a href="{% url 'materia:listado_materias' %}">Volver</a>
+    </div>
+{% endblock contenido %}

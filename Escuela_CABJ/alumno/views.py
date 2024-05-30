@@ -20,10 +20,6 @@ def listado_alumnos(request):
     contexto = {"alumnos": consulta}
     return render(request, "alumno/listado_alumnos.html", contexto)
 
-#def listado_alumnos(request):
-#    consulta = models.Alumno.objects.all()
-#    contexto = {"alumnos": consulta}
-#   return render (request, "alumno/listado_alumnos.html", contexto)
 
 def crear_alumno(request):
     if request.method == "POST":
