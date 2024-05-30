@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block tiulo %}
+    Producto | Productos
+{% endblock titulo %}
+
+{% block titulo_aplicacion %}
+    Producto - Productos: Vista en Detalle
+{% endblock titulo_aplicacion %}
+
+{% block contenido %}
+    <ul>
+        <li>Nombre: {{ docente.nombre }} </li>
+        <li>Apellido: {{ docente.apellido }}</li>
+        <li>Materia : {{docente.materia_id}}</li>
+        <li>Año: {{docente.año}}</li>
+    <div>
+        <a href="{% url 'producto:producto_list' %}">Volver</a>
+    </div>
+{% endblock contenido %}
