@@ -9,17 +9,31 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    {% for docente in docentes %}
+{% for docente in docentes %}
+<div class="container mt-5">
+    <h1 class="display-8">{{ docente.nombre }} {{ docente.apellido }}</h1>
+    <p>
+        <ul class="list-group">
+            <li class="list-group-item">{{ docente.materia_id }}</li>
+        </ul>
+    </p>
+</div>
+{% endfor %}
+<a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Ir a principal</a>
 
-    <div class="container mt-5">
-        <h1 class="display-8">{{ docente.nombre }} {{ docente.apellido }}</h1>
-        <p>
-            <ul class="list-group">
-                <li class="list-group-item">{{ docente.materia_id }}</li>
-            </ul>
-        </p>
-    </div>
-    {% endfor %}
-    <a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Ir a principal</a>
-    
 {% endblock contenido %}
+
+
+
+
+ <!-- {% for docente in docentes %}
+<div class="container mt-5">
+    <h1 class="display-8">{{ docente.nombre }} {{ docente.apellido }}</h1>
+    <p>
+        <ul class="list-group">
+            <li class="list-group-item">{{ docente.materia_id }}</li>
+        </ul>
+    </p>
+</div>
+{% endfor %}
+<a href="{% url 'core:index' %}" class="btn btn-primary mt-3">Ir a principal</a>  -->
