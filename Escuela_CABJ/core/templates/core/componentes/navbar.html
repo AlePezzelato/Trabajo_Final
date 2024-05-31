@@ -9,7 +9,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'alumno:index' %}">Alumnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'docente:index' %}">Docentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'materia:index' %}">Materia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:nosotros' %}">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-primary" href="#">{{user.username}}</a></li>
                     <li class="nav-item">
                     <form action="{% url 'core:logout' %}" method="post">
