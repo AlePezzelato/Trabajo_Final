@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Escuela la Mitad + 1
+{% endblock titulo %}
+
+{% block titulo_aplicacion %}
+    Nosotros - Nuestra presenteacion
+{% endblock titulo_aplicacion %}
+
+{% block contenido %}
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card" style="width: 16rem;">
+        <img src="{% static 'core/imagenes/mi_foto.jpg' %}" class="card-img-top" alt="..."">
+        <div class="card-body">
+          <p class="card-text">Mi nombre es Alejandro Pezzelato.</p>
+          <p class="card-text">Tengo 54 años, vivo en Mar del Plata</p>
+          <p class="card-text">Tengo una hija de 22 años, cerca de recibirse de Ingeniera Industrial (mi orgullo mas grande)</p>
+          <p class="card-text">como veran en la foto soy maratonista</p>
+          <p class="card-text">Estudie Abogacia y sociologia, ninguna de las dos, por ditintos motivos, pude terminar.</p>
+          <p class="card-text">Hace un año y medio decidi empezar a capacitarme en IT ya que el ambito d elas ciencias sociales se esta agotando.</p>
+          <p class="card-text">En ese momento estoy desocupado, buscando arduamente trabajo.</p>
+          <p class="card-text">Como veran, tambien hincha de Boca.</p>
+          <p class="card-text">Muchas gracias!!!! por ayudar en este tramo formativo.</p>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}
