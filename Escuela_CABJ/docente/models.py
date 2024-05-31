@@ -1,5 +1,5 @@
 from django.db import models
-from alumno.models import Año
+#from alumno.models import Año
 from materia.models import Materia
 
 
@@ -9,8 +9,8 @@ from materia.models import Materia
 class Docente(models.Model):
     nombre = models.CharField(max_length=150)
     apellido = models.CharField(max_length=150)
-    materia_id = models.ForeignKey("materia.Materia", related_name="docentes", on_delete=models.SET_NULL, null=True, blank=True)
-    año= models.IntegerField(null=True, unique=True)
+    materia = models.CharField(max_length=100, null=True, unique=False)
+    año = models.IntegerField(null=True, unique=False)
     
     def __str__(self) -> str:
         return f"{self.apellido}, {self.nombre}"
@@ -19,7 +19,7 @@ class Docente(models.Model):
 class Curso(models.Model):
     docente = models.ForeignKey(Docente, on_delete=models.SET_NULL, null=True, blank=True)
     materia = models.ForeignKey(Materia, on_delete=models.SET_NULL, null=True, blank=True)
-    año = models.ForeignKey(Año, on_delete=models.SET_NULL, null=True, blank=True)
+    #año = models.ForeignKey(Año, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.docente} en {self.año}"
+        return f"{self.docente}"

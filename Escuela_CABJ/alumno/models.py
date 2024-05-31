@@ -9,9 +9,8 @@ class Alumno(models.Model):
     apellido = models.CharField(max_length=150)
     fecha_de_nacimiento = models.DateField(null=True, blank=True)
     año_curso= models.PositiveBigIntegerField(null=True)
-    docente_id = models.ForeignKey("docente.Docente", on_delete=models.SET_NULL, null=True)
-    materia_id = models.ForeignKey("materia.Materia", on_delete=models.SET_NULL, null=True)
-    año = models.ManyToManyField("Año", through="Inscripcion")
+    docente= models.CharField(max_length=150,null=True, unique=False)
+    materia = models.CharField(max_length=100,null=True, unique=False)
     
     def __str__(self) -> str:
         return f"{self.apellido}, {self.nombre}"

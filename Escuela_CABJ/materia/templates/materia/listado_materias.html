@@ -29,14 +29,14 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th>Nombre y Año de la Materia</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {% for materia in materias%}
                     <tr>
-                        <td>{{ materia.nombre }} </td>
+                        <td>{{ materia.nombre }} {{materia.año_materia}}</td>
                         <td>
                             <a href="{% url 'materia:detalle_materia' materia.id%}"
                                class="btn btn-primary btn-sm">Detalle</a>

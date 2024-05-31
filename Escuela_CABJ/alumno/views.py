@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from alumno.models import Alumno, Año, Inscripcion
+from alumno.models import Alumno
 from alumno.forms import AlumnoForm
 
 #Vistas para la app alumno
