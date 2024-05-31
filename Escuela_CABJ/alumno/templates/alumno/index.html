@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block titulo %}
     Alumnos
@@ -9,6 +10,10 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
+
+<div class="text-center my-3">
+    <img src="{% static 'core/imagenes/bandera-boca-junior.webp' %}" alt="" class="img-fluid" style="max-width: 30%;">
+</div>
 <div class="d-flex justify-content-around my-3">
     <a href="{% url 'alumno:crear_alumno' %}" class="btn btn-primary">Crear Alumno</a>
     <a href="{% url 'alumno:listado_alumnos' %}" class="btn btn-secondary">Listado de alumnos</a>
