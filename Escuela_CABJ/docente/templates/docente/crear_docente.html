@@ -1,22 +1,29 @@
 {% extends 'core/base.html' %}
+
 {% block titulo %}
-    Carga de Docentes
+    Docentes
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
     {% if form.instance.pk %}
-        Editar docente
+        Escuela La Mitad + 1 -Editar docente
     {% else %}
-        Crear docente
+        Escuela La Mitad + 1 -Crear docente
     {% endif %}
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    <form  method="post">
-        {% csrf_token %}
-        <table>
-        {{form.as_table}}
-        </table>
-        <button type="submit">Guardar</button>
+<div class="container mt-3">
+    <form method="post" class="row gy-3">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+      <div class="col-auto">
+        <a href="{% url 'docente:listado_docentes' %}" class="btn btn-secondary">Volver</a>
+      </div>
     </form>
+  </div>
+    
 {% endblock contenido %}

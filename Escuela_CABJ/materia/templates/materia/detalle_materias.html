@@ -1,21 +1,21 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Producto | Categorías de Productos
+    Materias
 {% endblock titulo %}
 
 {% block titulo_aplicacion%}
-    Producto - Categorías de Productos: Vista en Detalle
+Escuela La Mitad + 1 - Detalle de materias
 {% endblock titulo_aplicacion%}
 
 {% block contenido%}
-    <ul>
-        <li>Nombre: {{ materia.nombre }} </li>
-        <li>Año que cursa: {{materia.año_materia}}</li>
-        <li>Docente: {{materia.docente}}</li>
+    <ul class="list-group my-3">
+        <li class="list-group-item"><strong>>Nombre: </strong>{{ materia.nombre }} </li>
+        <li class="list-group-item"><strong>>Año que cursa: </strong>{{materia.año_materia}}</li>
+        <li class="list-group-item"><strong>>Docente: </strong> {{materia.docente}}</li>
 
     </ul>
-    <div>
-        <a href="{% url 'materia:listado_materias' %}">Volver</a>
+    <div class="my-3">
+    <a href="{% url 'materia:listado_materias' %}" class="btn btn-primary">Volver</a>
     </div>
 {% endblock contenido %}

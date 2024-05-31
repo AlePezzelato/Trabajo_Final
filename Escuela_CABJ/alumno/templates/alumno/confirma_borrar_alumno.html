@@ -8,11 +8,11 @@
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
+<p class="fs-4 fst-italic">¿Seguro que desea eliminar los datos de {{ alumno.nombre }} {{ alumno.apellido }}?</p>
+<form method="post" class="my-3">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'alumno:index' %}" class="btn btn-secondary ms-2">Volver</a>
+</form>
 
-<p class="fs-4 fst-italic">Seguro que desea eliminar los datos de {{alumno.nombre}} {{alumno.apellido}}?</p>
-    <form  method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar</button>
-    </form>
-    <p><a href="{% url 'alumno:index' %}">Volver</a></p>
 {% endblock contenido %}

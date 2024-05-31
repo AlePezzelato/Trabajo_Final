@@ -9,10 +9,11 @@
 
 {% block contenido %}
 
-<p class="fs-4 fst-italic">Seguro que desea eliminar los datos de {{materia.nombre}} {{materia.año_materia}}?</p>
-    <form  method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar</button>
-    </form>
-    <p><a href="{% url 'materia:index' %}">Volver</a></p>
+<p class="fs-4 fst-italic">¿Seguro que desea eliminar los datos de {{ materia.nombre }} {{ materia.año_materia }}?</p>
+<form method="post" class="my-3">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'materia:index' %}" class="btn btn-secondary ms-2">Volver</a>
+</form>
+
 {% endblock contenido %}

@@ -9,16 +9,15 @@
 {% endblock titulo_aplicacion%}
 
 {% block contenido%}
-    <ul>
-        <li>Nombre: {{ alumno.nombre }} </li>
-        <li>Apellido: {{ alumno.apellido }}</li>
-        <li>Fecha de nacimiento: {{alumno.fecha_de_nacimiento}}</li>
-        <li>Año que cursa: {{alumno.año_curso}}</li>
-        <li>Materia: {{alumno.materia}}</li>
-        <li>Docente: {{alumno.docente}}</li>
-
-    </ul>
-    <div>
-        <a href="{% url 'alumno:listado_alumnos' %}">Volver</a>
-    </div>
+<ul class="list-group my-3">
+    <li class="list-group-item"><strong>Nombre:</strong> {{ alumno.nombre }}</li>
+    <li class="list-group-item"><strong>Apellido:</strong> {{ alumno.apellido }}</li>
+    <li class="list-group-item"><strong>Fecha de nacimiento:</strong> {{ alumno.fecha_de_nacimiento }}</li>
+    <li class="list-group-item"><strong>Año que cursa:</strong> {{ alumno.año_curso }}</li>
+    <li class="list-group-item"><strong>Materia:</strong> {{ alumno.materia }}</li>
+    <li class="list-group-item"><strong>Docente:</strong> {{ alumno.docente }}</li>
+</ul>
+<div class="my-3">
+    <a href="{% url 'alumno:listado_alumnos' %}" class="btn btn-primary">Volver</a>
+</div>
 {% endblock contenido %}

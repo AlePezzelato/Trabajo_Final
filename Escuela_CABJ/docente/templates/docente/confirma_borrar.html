@@ -1,18 +1,19 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Producto | Productos
+    Docentes
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
-    Producto - Productos: Eliminar
+    Escuela La Mitad + 1 - Borrar docente
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    <p class="fs-5  fst-italic ">¿Confirma eliminar {{docentes.nombre}} {{docentes.apellido}}?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar</button>
-    </form>
-    <a href="{% url 'docente:index' %}">Volver al inicio de Producto</a>
+<p class="fs-4 fst-italic">¿Seguro que desea eliminar los datos de {{ docente.nombre }} {{ docente.apellido }}?</p>
+<form method="post" class="my-3">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'docente:index' %}" class="btn btn-secondary ms-2">Volver</a>
+</form>
+
 {% endblock contenido %}

@@ -9,9 +9,9 @@ Escuela La mitad +1 - Docentes
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-<div class="text-center">
-<button><a href="{% url 'docente:listado_docentes' %}">Ir al listado de docentes</a></button>
-<button><a href="{% url 'docente:crear_docente' %}">Crear docentes</a></button>
-<button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
+<div class="d-flex justify-content-around my-3">
+    <a href="{% url 'docente:crear_docente' %}" class="btn btn-primary">Crear Docente</a>
+    <a href="{% url 'docente:listado_docentes' %}" class="btn btn-secondary">Listado de docentes</a>
+    <a href="{% url 'core:index' %}" class="btn btn-success">Volver</a>
 </div>
 {% endblock contenido %}

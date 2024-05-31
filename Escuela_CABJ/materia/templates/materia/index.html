@@ -5,12 +5,14 @@
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
-Escuela La mitad +1
+Escuela La mitad +1 - Materias
 {% endblock titulo_aplicacion %}
 
 
 {% block contenido %}
-<button ><a href="{% url 'materia:crear_materia' %}">Crear Materia</a></button>
-<button ><a href="{% url 'materia:listado_materias' %}">Listado de materias</a></button>
-<button ><a href="{% url 'core:index' %}">Ir a principal</a></button>
+<div class="d-flex justify-content-around my-3">
+    <a href="{% url 'materia:crear_materia' %}" class="btn btn-primary">Crear Materia</a>
+    <a href="{% url 'materia:listado_materias' %}" class="btn btn-secondary">Listado de materias</a>
+    <a href="{% url 'core:index' %}" class="btn btn-success">Ir a principal</a>
+</div>
 {% endblock contenido %}

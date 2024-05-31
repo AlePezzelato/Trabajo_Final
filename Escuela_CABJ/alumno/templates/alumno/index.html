@@ -5,10 +5,13 @@
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
-    Escuela La mitad +1 
+    Escuela La mitad +1 - Alumnos
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-<button><a href="{% url 'alumno:listado_alumnos' %}">Ir al listado de alumnos</a></button>
-<button><a href="{% url 'alumno:crear_alumno' %}">Agregar alumnos</a></button>
+<div class="d-flex justify-content-around my-3">
+    <a href="{% url 'alumno:crear_alumno' %}" class="btn btn-primary">Crear Alumno</a>
+    <a href="{% url 'alumno:listado_alumnos' %}" class="btn btn-secondary">Listado de alumnos</a>
+    <a href="{% url 'core:index' %}" class="btn btn-success">Volver</a>
+</div>
 {% endblock contenido %}

@@ -1,20 +1,21 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Producto | Productos
+    Docentes
 {% endblock titulo %}
 
 {% block titulo_aplicacion %}
-    Producto - Productos: Vista en Detalle
+    Escuela La Mitad +1 - Detalle docentes
 {% endblock titulo_aplicacion %}
 
 {% block contenido %}
-    <ul>
-        <li>Nombre: {{ docentes.nombre }} </li>
-        <li>Apellido: {{ docentes.apellido }}</li>
-        <li>Materia : {{docentes.materia}}</li>
-        <li>Año: {{docentes.año}}</li>
-    <div>
-        <a href="{% url 'docente:listado_docentes' %}">Volver</a>
+    <ul class="list-group my-3">
+        <li class="list-group-item"><strong>Nombre: </strong> {{ docentes.nombre }} </li>
+        <li class="list-group-item"><strong>Apellido:</strong> {{ docentes.apellido }}</li>
+        <li class="list-group-item"><strong>Materia : </strong> {{docentes.materia}}</li>
+        <li class="list-group-item"><strong>Año: </strong> {{docentes.año}}</li>
+    </ul>
+    <div class="my-3">
+        <a href="{% url 'docente:listado_docentes' %}" class="btn btn-primary">Volver</a>
     </div>
 {% endblock contenido %}
